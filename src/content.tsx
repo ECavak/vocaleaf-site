@@ -36,20 +36,23 @@ export const pages: Record<Lang, { privacy: Page; support: Page; terms: Page }> 
   en: {
     privacy: {
       title: 'Privacy Policy',
-      intro: 'Effective date: 15 October 2026',
+      intro: 'Effective date: 24 October 2026',
       sections: [
-        { h: 'Summary', body: <p>Vocaleaf has no account and no sign-up. It has no ads, no tracking and no third-party analytics.</p> },
-        { h: 'Data stored on your device and in iCloud', body: <p>Your learning progress, saved words and settings are stored on your device. If you are signed into iCloud, they sync through your own private iCloud database (Apple CloudKit), which the developer cannot read.</p> },
+        { h: 'Summary', body: <p>Vocaleaf has no account and no sign-up, no ads and no tracking. It collects anonymous usage analytics to improve the app, which you can turn off in Settings.</p> },
+        { h: 'Usage analytics (optional)', body: <>
+          <p>To understand how the app is used, Vocaleaf sends anonymous usage events (for example: onboarding steps, words viewed, quizzes and games played, paywall views and purchases) with your app settings, app version and basic device information (model, iOS version, language). We use Google Firebase Analytics and Mixpanel for this. Events are tied to a random install ID created by Firebase Authentication, not to your name, email or Apple ID. Firebase may estimate an approximate (country/region) location from the IP address; Mixpanel's IP-based location is turned off.</p>
+          <p>We do not use the advertising identifier (IDFA), do not track you across other companies' apps or websites, and do not sell or share data for advertising. You can stop analytics at any time with Settings › Share anonymous usage data.</p></> },
+        { h: 'Data stored on your device and in iCloud', body: <p>Your learning progress, saved words and settings are stored on your device. If you are signed into iCloud, they sync through your own private iCloud storage (Apple CloudKit and iCloud key-value storage), which the developer cannot read.</p> },
         { h: 'Report a problem (optional)', body: <>
           <p>Reporting is optional and only happens when you start it. It sends the word, the field you reported, an optional note, the app and content version, and your language settings to the developer's CloudKit public database. It contains no personal identifiers; Apple attaches an anonymous per-app user ID.</p>
           <p>If iCloud is not available, you can send the report by email instead. This shares your email address with the developer.</p></> },
-        { h: 'Purchases', body: <p>Purchases are handled by Apple. Subscription status is managed through RevenueCat using an anonymous app user ID and purchase history. No name or email is used.</p> },
+        { h: 'Purchases', body: <p>Purchases are handled by Apple. Subscription status is managed through RevenueCat using the same anonymous install ID and your purchase history. No name or email is used.</p> },
         { h: 'Notifications', body: <p>Notifications are local reminders scheduled on your device.</p> },
         { h: 'Pronunciation and word games', body: <p>Word pronunciation uses your device's built-in speech. Word games may use your device's built-in spelling dictionary, on the device.</p> },
         { h: 'Children', body: <p>Vocaleaf is not directed at children under 13, and we do not knowingly collect data from them.</p> },
         { h: 'Contact and data deletion', body: <>
           <p>Contact: {mail}</p>
-          <p>To delete your data, delete the app and its iCloud data (Settings › Apple Account › iCloud › Manage Storage). Reports you sent can be deleted on request by email.</p></> },
+          <p>To delete your data, delete the app and its iCloud data (Settings › Apple Account › iCloud › Manage Storage). Reports you sent and analytics linked to your install ID can be deleted on request by email.</p></> },
       ],
     },
     support: {
@@ -76,20 +79,23 @@ export const pages: Record<Lang, { privacy: Page; support: Page; terms: Page }> 
   tr: {
     privacy: {
       title: 'Gizlilik Politikası',
-      intro: 'Yürürlük tarihi: 15 Ekim 2026',
+      intro: 'Yürürlük tarihi: 24 Ekim 2026',
       sections: [
-        { h: 'Özet', body: <p>Vocaleaf'te hesap veya kayıt yoktur. Reklam, izleme ve üçüncü taraf analitiği yoktur.</p> },
-        { h: 'Cihazda ve iCloud\'da saklanan veriler', body: <p>Öğrenme ilerlemeniz, kaydettiğiniz kelimeler ve ayarlarınız cihazınızda saklanır. iCloud'da oturum açtıysanız, bunlar kendi özel iCloud veritabanınız (Apple CloudKit) üzerinden eşitlenir; geliştirici bu veriyi okuyamaz.</p> },
+        { h: 'Özet', body: <p>Vocaleaf'te hesap veya kayıt, reklam ve izleme yoktur. Uygulamayı geliştirmek için anonim kullanım verisi toplar; bunu Ayarlar'dan kapatabilirsiniz.</p> },
+        { h: 'Kullanım analitiği (isteğe bağlı)', body: <>
+          <p>Uygulamanın nasıl kullanıldığını anlamak için Vocaleaf anonim kullanım olayları gönderir (örneğin kurulum adımları, görüntülenen kelimeler, oynanan quiz ve oyunlar, ödeme ekranı görüntülemeleri ve satın alımlar); bunlarla birlikte uygulama ayarlarınızı, uygulama sürümünü ve temel cihaz bilgilerini (model, iOS sürümü, dil) iletir. Bunun için Google Firebase Analytics ve Mixpanel kullanırız. Olaylar, Firebase Authentication'ın oluşturduğu rastgele bir kurulum kimliğine bağlıdır; adınıza, e-postanıza veya Apple kimliğinize bağlı değildir. Firebase, IP adresinden yaklaşık konum (ülke/bölge) tahmin edebilir; Mixpanel'in IP tabanlı konumu kapalıdır.</p>
+          <p>Reklam kimliğini (IDFA) kullanmayız, sizi başka şirketlerin uygulama ve sitelerinde izlemeyiz, verileri reklam amacıyla satmaz veya paylaşmayız. Analitiği istediğiniz zaman Ayarlar › Anonim kullanım verisi paylaş ile kapatabilirsiniz.</p></> },
+        { h: 'Cihazda ve iCloud\'da saklanan veriler', body: <p>Öğrenme ilerlemeniz, kaydettiğiniz kelimeler ve ayarlarınız cihazınızda saklanır. iCloud'da oturum açtıysanız, bunlar kendi özel iCloud depolamanız (Apple CloudKit ve iCloud anahtar-değer depolaması) üzerinden eşitlenir; geliştirici bu veriyi okuyamaz.</p> },
         { h: 'Sorun bildir (isteğe bağlı)', body: <>
           <p>Bildirim isteğe bağlıdır ve yalnızca siz başlattığınızda yapılır. Kelimeyi, bildirdiğiniz alanı, isteğe bağlı notunuzu, uygulama ve içerik sürümünü ve dil ayarlarınızı geliştiricinin CloudKit genel veritabanına gönderir. Kişisel tanımlayıcı içermez; Apple uygulamaya özel anonim bir kullanıcı kimliği ekler.</p>
           <p>iCloud kullanılamıyorsa bildirimi e-posta ile gönderebilirsiniz. Bu durumda e-posta adresiniz geliştirici ile paylaşılır.</p></> },
-        { h: 'Satın alımlar', body: <p>Satın alımları Apple yönetir. Abonelik durumu, anonim bir uygulama kullanıcı kimliği ve satın alma geçmişi ile RevenueCat üzerinden yönetilir. Ad veya e-posta kullanılmaz.</p> },
+        { h: 'Satın alımlar', body: <p>Satın alımları Apple yönetir. Abonelik durumu, aynı anonim kurulum kimliği ve satın alma geçmişi ile RevenueCat üzerinden yönetilir. Ad veya e-posta kullanılmaz.</p> },
         { h: 'Bildirimler', body: <p>Bildirimler, cihazınızda planlanan yerel hatırlatmalardır.</p> },
         { h: 'Telaffuz ve kelime oyunları', body: <p>Kelime telaffuzu cihazınızın yerleşik konuşma özelliğini kullanır. Kelime oyunları, cihazınızın yerleşik yazım denetimi sözlüğünü cihaz üzerinde kullanabilir.</p> },
         { h: 'Çocuklar', body: <p>Vocaleaf 13 yaşın altındaki çocuklara yönelik değildir ve onlardan bilerek veri toplamayız.</p> },
         { h: 'İletişim ve veri silme', body: <>
           <p>İletişim: {mail}</p>
-          <p>Verilerinizi silmek için uygulamayı ve iCloud verilerini silin (Ayarlar › Apple Hesabı › iCloud › Depolamayı Yönet). Gönderdiğiniz bildirimler, e-posta ile talep üzerine silinebilir.</p></> },
+          <p>Verilerinizi silmek için uygulamayı ve iCloud verilerini silin (Ayarlar › Apple Hesabı › iCloud › Depolamayı Yönet). Gönderdiğiniz bildirimler ve kurulum kimliğinize bağlı analitik veriler, e-posta ile talep üzerine silinebilir.</p></> },
       ],
     },
     support: {
